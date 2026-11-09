@@ -11,6 +11,7 @@ out/
 .classpath
 .factorypath
 build/
+.vscode/
 # Tooling
 .idea/
 .DS_Store
