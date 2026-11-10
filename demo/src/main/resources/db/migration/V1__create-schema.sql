@@ -1,0 +1,19 @@
+CREATE TABLE coisa (
+    id BIGINT PRIMARY KEY NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    qtd INTEGER NOT NULL
+);
+
+CREATE SEQUENCE coisa_seq
+    AS BIGINT
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+    CACHE 1
+    NO CYCLE;
+
+ALTER TABLE coisa
+    ALTER COLUMN id SET DEFAULT nextval('coisa_seq');
+
+ALTER SEQUENCE coisa_seq OWNED BY coisa.id;
+
