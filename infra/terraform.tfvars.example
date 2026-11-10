@@ -1,0 +1,11 @@
+region              = "us-east-2"
+project_name        = "demo-micronaut"
+db_name             = "demo"
+db_username         = "demo_admin"
+engine_version      = "17"
+instance_class      = "db.t4g.micro"
+allocated_storage   = 20
+publicly_accessible = true
+
+# Replace with your public IP: curl -s https://checkip.amazonaws.com
+allowed_cidr = "x.x.x.x/32"
