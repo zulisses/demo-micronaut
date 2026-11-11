@@ -67,3 +67,39 @@ variable "skip_final_snapshot" {
   description = "Skip the final snapshot on destroy. Convenient for demos; keep false in production."
   default     = true
 }
+
+variable "ecs_instance_type" {
+  type        = string
+  description = "EC2 instance type for the ECS container instances."
+  default     = "t3.small"
+}
+
+variable "ecs_min_size" {
+  type        = number
+  description = "Minimum number of ECS container instances."
+  default     = 1
+}
+
+variable "ecs_max_size" {
+  type        = number
+  description = "Maximum number of ECS container instances."
+  default     = 2
+}
+
+variable "ecs_desired_capacity" {
+  type        = number
+  description = "Desired number of ECS container instances."
+  default     = 1
+}
+
+variable "container_image" {
+  type        = string
+  description = "Image started by the ECS service. Use the URI printed by demo/push-ecr.sh. Set container_port to 8080 for that image."
+  default     = "public.ecr.aws/docker/library/nginx:1.27-alpine"
+}
+
+variable "container_port" {
+  type        = number
+  description = "Port the container listens on. The load balancer forwards HTTP to this port."
+  default     = 80
+}
